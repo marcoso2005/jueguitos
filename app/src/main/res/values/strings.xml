@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Jueguitos</string>
+    <string name="estaado">Preparado</string>
+    <string name="ganar">Has ganado</string>
+    <string name="perder">Has perdido</string>
+    <string name="reiniciar">Reiniciar</string>
+    <string name="circulo">Ganan los circulos</string>
+    <string name="cruz">Ganan las cruces</string>
+    <string name="empate">EMPATE</string>
+    <string name="volver">Volver</string>
+</resources>

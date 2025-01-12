@@ -77,7 +77,7 @@ class Inicio : AppCompatActivity() {
                     }
 
                 } else {
-                    Toast.makeText(this, "No existe el alumno", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "No existe el usuario", Toast.LENGTH_SHORT).show()
                 }
             }
         }

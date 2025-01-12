@@ -34,7 +34,7 @@ class TresEnRaya : AppCompatActivity() {
     fun clic() {
         var turno = false;
         var tablero = Array(3) { Array(3) { 0 } };
-        val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz)
+        val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz,finalizar)
         val layout1 = findViewById<ConstraintLayout>(R.id.layout1)
         layout1.addView(fondo)
 
@@ -54,7 +54,7 @@ class TresEnRaya : AppCompatActivity() {
                 }
                 turno = false;
                 ganar = false;
-                val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz)
+                val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz,finalizar)
                 val layout1 = findViewById<ConstraintLayout>(R.id.layout1)
                 layout1.addView(fondo)
                 val veintidos = findViewById<View>(R.id.button22)
@@ -77,7 +77,7 @@ class TresEnRaya : AppCompatActivity() {
                     }
                     ganar(tablero, turno);
                     llenar(tablero);
-                    val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz)
+                    val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz,finalizar)
                     turno = !turno;
                     val layout1 = findViewById<ConstraintLayout>(R.id.layout1)
                     layout1.addView(fondo)
@@ -97,7 +97,7 @@ class TresEnRaya : AppCompatActivity() {
                     }
                     ganar(tablero, turno);
                     llenar(tablero);
-                    val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz)
+                    val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz,finalizar)
                     turno = !turno;
                     val layout1 = findViewById<ConstraintLayout>(R.id.layout1)
                     layout1.addView(fondo)
@@ -116,7 +116,7 @@ class TresEnRaya : AppCompatActivity() {
                     }
                     ganar(tablero, turno);
                     llenar(tablero);
-                    val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz)
+                    val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz,finalizar)
                     turno = !turno;
                     val layout1 = findViewById<ConstraintLayout>(R.id.layout1)
                     layout1.addView(fondo)
@@ -135,7 +135,7 @@ class TresEnRaya : AppCompatActivity() {
                     }
                     ganar(tablero, turno);
                     llenar(tablero);
-                    val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz)
+                    val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz,finalizar)
                     turno = !turno;
                     val layout1 = findViewById<ConstraintLayout>(R.id.layout1)
                     layout1.addView(fondo)
@@ -154,7 +154,7 @@ class TresEnRaya : AppCompatActivity() {
                     }
                     ganar(tablero, turno);
                     llenar(tablero);
-                    val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz)
+                    val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz,finalizar)
                     turno = !turno;
                     val layout1 = findViewById<ConstraintLayout>(R.id.layout1)
                     layout1.addView(fondo)
@@ -173,7 +173,7 @@ class TresEnRaya : AppCompatActivity() {
                     }
                     ganar(tablero, turno);
                     llenar(tablero);
-                    val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz)
+                    val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz,finalizar)
                     turno = !turno;
                     val layout1 = findViewById<ConstraintLayout>(R.id.layout1)
                     layout1.addView(fondo)
@@ -192,7 +192,7 @@ class TresEnRaya : AppCompatActivity() {
                     }
                     ganar(tablero, turno);
                     llenar(tablero);
-                    val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz)
+                    val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz,finalizar)
                     turno = !turno;
                     val layout1 = findViewById<ConstraintLayout>(R.id.layout1)
                     layout1.addView(fondo)
@@ -211,7 +211,7 @@ class TresEnRaya : AppCompatActivity() {
                     }
                     ganar(tablero, turno);
                     llenar(tablero);
-                    val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz)
+                    val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz,finalizar)
                     turno = !turno;
                     val layout1 = findViewById<ConstraintLayout>(R.id.layout1)
                     layout1.addView(fondo)
@@ -230,7 +230,7 @@ class TresEnRaya : AppCompatActivity() {
                     }
                     ganar(tablero, turno);
                     llenar(tablero);
-                    val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz)
+                    val fondo = LienzoTresEnRaya(this, tablero, turno, ganar, circulo, cruz,finalizar)
                     turno = !turno;
                     val layout1 = findViewById<ConstraintLayout>(R.id.layout1)
                     layout1.addView(fondo)
@@ -253,7 +253,8 @@ class TresEnRaya : AppCompatActivity() {
         var win = findViewById<Button>(R.id.ganar);
         if (finalizar) {
             ganar = true;
-            Toast.makeText(this, R.string.empate.toString(), Toast.LENGTH_SHORT).show()
+            var res = this.resources
+            Toast.makeText(this, res.getString(R.string.empate), Toast.LENGTH_SHORT).show()
             val param = win.layoutParams as ConstraintLayout.LayoutParams
             param.topMargin = 0;
             win.layoutParams = param

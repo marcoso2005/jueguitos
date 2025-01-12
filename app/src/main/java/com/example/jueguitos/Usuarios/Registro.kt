@@ -37,6 +37,18 @@ class Registro : AppCompatActivity() {
             finish()
         }
 
+        var inicio = findViewById<Button>(R.id.inicio)
+        inicio.setOnClickListener(){
+            val intento1 = Intent(this, Inicio::class.java)
+            finish()
+            startActivity(intento1)
+        }
+
+        var subir = findViewById<ImageView>(R.id.subir)
+        subir.setOnClickListener(){
+            abrirExplorador();
+        }
+
         var registro = findViewById<Button>(R.id.registro)
         registro.setOnClickListener() {
             val admin = AdminBase(this, "usuario", null, 1)
@@ -62,18 +74,6 @@ class Registro : AppCompatActivity() {
                 }
             }
         }
-
-        var inicio = findViewById<Button>(R.id.inicio)
-        inicio.setOnClickListener(){
-            val intento1 = Intent(this, Inicio::class.java)
-            finish()
-            startActivity(intento1)
-        }
-
-        var subir = findViewById<ImageView>(R.id.subir)
-        subir.setOnClickListener(){
-            abrirExplorador();
-        }
     }
 
     fun abrirExplorador(){
@@ -87,7 +87,6 @@ class Registro : AppCompatActivity() {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null) {
             val imageUri: Uri? = data.data
             imageUri?.let {
-                // Mostrar la imagen seleccionada en el ImageView
                 imagen = MediaStore.Images.Media.getBitmap(contentResolver, it)
             }
         }

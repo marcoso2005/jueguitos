@@ -6,11 +6,12 @@ import android.graphics.Paint
 import android.view.View
 import com.example.jueguitos.R
 
-class LienzoTresEnRaya(context: Context, cel: Array<Array<Int>>, turno: Boolean, ganar:Boolean, circulo:Int, cruz:Int) : View(context) {
+class LienzoTresEnRaya(context: Context, cel: Array<Array<Int>>, turno: Boolean, ganar:Boolean, circulo:Int, cruz:Int,llenar:Boolean) : View(context) {
     var cel = cel;
     var turno = turno;
     val ganar = ganar;
     val circulo = circulo;
+    var llenar = llenar;
     var cruz = cruz;
     override fun onDraw(canvas: Canvas) {
         canvas.drawRGB(0, 0, 0)
@@ -45,16 +46,23 @@ class LienzoTresEnRaya(context: Context, cel: Array<Array<Int>>, turno: Boolean,
             canvas.drawText(res.getString(R.string.reiniciar),(ancho/2-620).toFloat(),(alto/2+20).toFloat(),pincel1);
             canvas.drawText(res.getString(R.string.volver),(ancho/2+280).toFloat(),(alto/2+20).toFloat(),pincel1);
 
-            if(turno){
+            if(llenar){
                 pincel1.textSize = 150F;
                 pincel1.isFakeBoldText = true;
-                pincel1.setARGB(255,0,255,255);
-                canvas.drawText(res.getString(R.string.circulo),100F,900F,pincel1);
-            }else{
-                pincel1.textSize = 150F;
-                pincel1.isFakeBoldText = true;
-                pincel1.setARGB(255,255,0,0);
-                canvas.drawText(res.getString(R.string.cruz),100F,900F,pincel1);
+                pincel1.setARGB(255,200,200,200);
+                canvas.drawText(res.getString(R.string.empate),400F,900F,pincel1);
+            }else {
+                if (turno) {
+                    pincel1.textSize = 150F;
+                    pincel1.isFakeBoldText = true;
+                    pincel1.setARGB(255, 0, 255, 255);
+                    canvas.drawText(res.getString(R.string.circulo), 100F, 900F, pincel1);
+                } else {
+                    pincel1.textSize = 150F;
+                    pincel1.isFakeBoldText = true;
+                    pincel1.setARGB(255, 255, 0, 0);
+                    canvas.drawText(res.getString(R.string.cruz), 100F, 900F, pincel1);
+                }
             }
         }
 

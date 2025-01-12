@@ -35,7 +35,6 @@ class PongMain : AppCompatActivity() {
         }
         miPunuacion = findViewById(R.id.miPuntuacion);
         oponente = findViewById(R.id.miPuntuacion2);
-        volver = findViewById(R.id.Volver);
 
         val table: PongTable = findViewById<View>(R.id.pongTable) as PongTable
         table.setScoreOpponent(findViewById<View>(R.id.tvScoreOpponent) as TextView)
